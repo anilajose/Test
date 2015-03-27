@@ -1,3 +1,4 @@
-branches:
-    only:
-      - /QA_.*/
+general:
+    branches:
+        only:
+            - /QA_.*/
