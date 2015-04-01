@@ -5,7 +5,11 @@ general:
     
 machine:
   java:
-    version: openjdk7  
+    version: openjdk7 
+dependencies:
+    pre:
+        compile gradleApi()
+        compile localGroovy()
 test:
   override:
     - 'cd src && gradle check jacocoTestReport'
