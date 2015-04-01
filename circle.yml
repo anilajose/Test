@@ -1,5 +1,5 @@
 general:
-    branches:
+  branches:
         only:
             - /QA_.*/
     
@@ -15,4 +15,4 @@ test:
     - 'cd src && gradle check jacocoTestReport'
 
   post:
-   - cp -R build/reports/* $CIRCLE_ARTIFACTS    
+    - cp -R build/reports/* $CIRCLE_ARTIFACTS    
