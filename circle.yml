@@ -3,3 +3,12 @@ general:
         only:
             - /QA_.*/
     
+machine:
+  java:
+    version: openjdk7  
+test:
+  override:
+    - 'cd src && gradle check jacocoTestReport'
+
+  post:
+   - cp -R build/reports/* $CIRCLE_ARTIFACTS    
