@@ -13,6 +13,7 @@ machine:
 dependencies:
   pre:
     - npm install -g jasmine
+    - npm install -g istanbul
     
 test:
   override:
@@ -22,4 +23,5 @@ test:
   post:
     #- mkdir -p Sourcing-FrontEnd-Automation-Scripts/reports/allure
     #- allure generate Sourcing-FrontEnd-Automation-Scripts/reports/allure -o $CIRCLE_TEST_REPORTS/Sourcing-FrontEnd-Automation-Scripts/allure -v 1.4.3  
+    - bundle exec teaspoon --coverage=default
     - cp -R build/reports/* $CIRCLE_ARTIFACTS
