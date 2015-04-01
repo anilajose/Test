@@ -12,8 +12,6 @@ machine:
     
 dependencies:
   pre:
-	
-  
     - npm install -g jasmine
     
 test:
