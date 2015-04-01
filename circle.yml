@@ -2,30 +2,4 @@ general:
     branches:
         only:
             - /QA_.*/
-machine:
-  ruby:
-    version: 2.0.0-p598
-  
-checkout:
-  post:
-    - git submodule add --force https://github.com/brynary/webrat webrat
-    - git submodule update --init # use submodules
-    - git submodule foreach git pull origin master
-
-dependencies:
-  pre:
-    - sudo apt-add-repository -y ppa:yandex-qatools/allure-framework #reports 
-    - sudo apt-get update #reports
-    - sudo apt-get install allure-cli #reports 
-    - bundler install
-    - cd webrat && gem install --local taza-0.9.2.1.gem
-
-test:
-  override:
-    - 'cd webrat && rspec spec/spec_helper.rb' #run spec
-   
-
-  post:
-    - mkdir -p webrat/reports/allure
-    - allure generate webrat/reports/allure -o $CIRCLE_TEST_REPORTS/webrat/allure -v 1.4.3  
-    #- cp -R build/reports/* $CIRCLE_ARTIFACTS    
+    
