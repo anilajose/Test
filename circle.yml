@@ -6,7 +6,10 @@ general:
 machine:
   java:
     version: openjdk7 
-
+dependencies:
+  pre:
+	npm install -g jasmine
+	
 test:
   override:
     - 'cd src && gradle check jacocoTestReport'
