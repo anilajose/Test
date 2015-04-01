@@ -18,7 +18,7 @@ dependencies:
 test:
   override:
     
-    - 'cd src && gradle check jacocoTestReport'
+    #- 'cd src && gradle check jacocoTestReport'
 
   post:
     #- mkdir -p Sourcing-FrontEnd-Automation-Scripts/reports/allure
